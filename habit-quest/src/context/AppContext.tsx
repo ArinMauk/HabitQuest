@@ -4,16 +4,30 @@ import { loadState, saveState } from "../storage";
 export interface AppState {
     tasks: { id: string; name: string; completed: boolean }[];
     coins: number;
-    productiveSites: string[];
-    distractingSites: string[];
+    focus: {
+        productiveSites: { domain: string; favicon?: string }[];
+        distractingSites: { domain: string; favicon?: string }[];
+        balance: number;
+        notifyOnLoss: boolean;
+        notifyOnGain: boolean;
+        lossThreshold: number;
+        gainThreshold: number;
+    };
     game: { level: number; xp: number; xpToNext: number };
 }
 
 const DEFAULT_STATE: AppState = {
     tasks: [],
     coins: 0,
-    productiveSites: ["github.com", "notion.so"],
-    distractingSites: ["youtube.com"],
+    focus: {
+        productiveSites: [{ domain: "github.com" }, { domain: "notion.so" }],
+        distractingSites: [{ domain: "youtube.com" }],
+        balance: 100,
+        notifyOnLoss: true,
+        notifyOnGain: true,
+        lossThreshold: 10,
+        gainThreshold: 20,
+    },
     game: { level: 1, xp: 0, xpToNext: 100 }
 };
 
