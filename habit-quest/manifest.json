@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Habit Quest",
+  "description": "Gamified habit tracker with Pomodoro, focus tracking, and RPG progression.",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Habit Quest"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "128": "public/icon128.png"
+  }
+}
